@@ -1,28 +1,3 @@
-# mKS Gitlab Werf setup
-
-## GitLab & mKS
-
-### Enable kubernetes agent service (kas) in Gitlab config
-
-```yaml
-    environment:
-        GITLAB_OMNIBUS_CONFIG: |
-            ...
-            gitlab_kas['enable'] = true
-            ...
-```
-
-### Define Gitlab Agent config
-
-```yaml
-# cat .gitlab/agents/mks-agent
-ci_access:
-  groups:
-  - id: <group_id>
-  projects:
-  - id: <project_id>
-```
-
 ### Connect cluster
 
 Inside Gitlab Project with .gitlab/agent folder go to
